@@ -21,11 +21,11 @@ const Product = ({id, title, price, rating, image}) => {
     return (
         <div className="product">
             <div className="product__info">
-                <p>{title}</p>
-                <p className='product__price'>
+                <div className='product__title'>{title}</div>
+                <div className='product__price'>
                     <small>$</small>
                     <strong>{price}</strong>
-                </p>
+                </div>
                 <div className="product__rating">
                     {Array(rating)
                         .fill()

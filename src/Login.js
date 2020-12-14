@@ -1,8 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Login.css'
 import {Link} from 'react-router-dom';
 
 const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = (e) => {
+        e.preventDefault()
+        console.log(email, password);
+        setEmail('');
+        setPassword('');
+    };
+
+    const register = (e) => {
+        e.preventDefault()
+    };
+
     return (
         <div className='login'>
             <Link to='/'>
@@ -17,18 +32,35 @@ const Login = () => {
 
                 <form>
                     <h5>E-mail</h5>
-                    <input type="email"/>
+                    <input
+                        type="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                    />
 
                     <h5>Password</h5>
-                    <input type="password"/>
+                    <input
+                        type="password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                    />
 
-                    <button className='login__signInButton'>Sign In</button>
+                    <button className='login__signInButton'
+                            onClick={signIn}
+                            type={'submit'}>
+                        Sign In
+                    </button>
                 </form>
-                    <p>
-                        By signing-in you agree to MY-Amazon CLONE Conditions of Use & Sale. Please see our
-                        Privacy Notice,our Cookies Notice and  our Interest-Based Ads Notice.
-                    </p>
-                <button className='login__registerButton'>Create your Amazon account</button>
+                <p>
+                    By signing-in you agree to MY-Amazon CLONE Conditions of Use & Sale. Please see our
+                    Privacy Notice,our Cookies Notice and our Interest-Based Ads Notice.
+                </p>
+                <button
+                    className='login__registerButton'
+                    onClick={register}
+                >
+                    Create your Amazon account
+                </button>
             </div>
         </div>
     );

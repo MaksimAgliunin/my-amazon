@@ -1,3 +1,7 @@
+h3 {
+    padding: 10px;
+}
+
 .checkout {
     display: flex;
     justify-content: space-between;
@@ -20,4 +24,6 @@
 
 .checkout__left > img {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }

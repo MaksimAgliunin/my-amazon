@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Payment.css'
 import {useStateValue} from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
@@ -18,7 +18,12 @@ const Payment = () => {
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState(false)
     const [error, setError] = useState(null);
-    const [disabled, setDisabled] = useState(true);
+    const [clientSecret, setClientSecret] = useState(true);
+
+    useEffect(() => {
+        //generate the special Stripe secret which allows us to charge a customer
+
+    },[basket])
 
     const handleSubmit = async (event) => {
         event.preventDefault();

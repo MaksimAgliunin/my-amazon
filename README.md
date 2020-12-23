@@ -8,6 +8,6 @@ Cloud: FireBase(Google).
 
 Routing: React-router.
 
-Styles: CSS flex-box, Material UI, Google Fonts, Font Awesome Icons.
+Styles: Material UI, CSS flex-box, Google Fonts, Font Awesome Icons.
 
 Payment system: Stripe.

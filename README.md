@@ -1,6 +1,6 @@
-The Full-stuck App.
+The Full-stack App.
 
-Front-end: JavaScript, React(based on functional components), Context API.
+Front-end: JavaScript, React(based-on functional components), Context API.
 
 Back-end: NodeJS, Express.
 

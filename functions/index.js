@@ -21,6 +21,13 @@ app.post('/payments/create', async (request, response) => {
     const total = request.query.total;
 
     console.log('Payment Request Received', total);
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: total, //subunits of the currency
+        currency: 'usd',
+    });
+    response.status(201).send({
+        clientSecret: paymentIntent.client_secret,
+    })
 })
 
 // Listen command

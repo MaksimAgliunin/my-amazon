@@ -14,6 +14,12 @@ const reducer = (state, action) => {
                 ...state,
                 basket: [...state.basket, action.item],
             }
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                basket: []
+            }
+
         case 'REMOVE_FROM_BASKET':
             //remove from state only one item
             // another approach is to use uniq id's for each item(UUID library)
